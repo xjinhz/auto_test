@@ -13,10 +13,10 @@ import logging
 # w：代表每次运行程序都重新写log。即覆盖之前保存的log信息
 
 
-logger = logging.getLogger() # 不加名称设置root logger
+logger = logging.getLogger()  # 不加名称设置root logger
 logger.setLevel(logging.INFO)
 
-formatter = logging.Formatter(  '%(asctime)s - %(name)s - %(levelname)s: - %(message)s',
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s: - %(message)s',
     datefmt='%Y-%m-%d %H:%M:%S')
 
 # 使用FileHandler输出到文件
