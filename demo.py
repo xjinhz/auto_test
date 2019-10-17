@@ -1,5 +1,7 @@
 # --*-- encoding:utf-8 --*--
 from locust import HttpLocust, TaskSet, task
+
+
 class WebsiteTasks(TaskSet):
     def on_start(self):
         self.client.post("/login", {
@@ -14,6 +16,8 @@ class WebsiteTasks(TaskSet):
     @task(1)
     def about(self):
         self.client.get("/about/")
+
+
 class WebsiteUser(HttpLocust):
     task_set = WebsiteTasks
     host = "https://debugtalk.com"
